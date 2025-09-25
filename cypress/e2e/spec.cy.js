@@ -9,10 +9,15 @@ const setting_order = {
   go_to: 14,
   steps: {
     st1: {
-      f1: 'MG048',
+      f1: null,
       f2: null
     },
-    st2: null,
+    st2: {
+      f1: 'เซลล์ประจำ 2',
+      f2: null,
+      f3: null,
+      f4: null,
+    },
     st3: {
       f1: null,
       f2: null
@@ -99,7 +104,7 @@ describe('Automation Test', () => {
   it('Login + Order Flow', () => {
     // cy.viewport(1440, 900);
     cy.viewport(1920, 1080)
-    loginCheckName("test1-3_1-7-25")
+    loginCheckName({id: 1})
 
     // ไปที่หน้า order
     GotoStartCreateOrder(setting_order);

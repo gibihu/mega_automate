@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "name": "my-name",
+        "email": "user@gmail.com",
+        "password": "123456",
+        "role": "บริหาร",
+        "body": "Fixtures are a great way to mock data for responses to routes"
+    }
+]

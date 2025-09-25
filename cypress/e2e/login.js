@@ -8,14 +8,18 @@ export function tryLogin(user) {
     cy.get('.MuiButtonBase-root').click()
 }
 
-export function loginCheckName(nameOrEmail) {
+export function loginCheckName(item) { //{id: 1} {name: "nameiii"}
     cy.fixture('users.json').then((users) => {
-        if(!users){
+        if (!users) {
             cy.log(`ไม่พบไฟล์ json`)
-        }else{
-            const user = users.find(u => u.name === nameOrEmail || u.email === nameOrEmail)
+        } else {
+            const user = users.find(u =>
+                (item.id && u.id === item.id) ||
+                (item.name && u.name === item.name) ||
+                (item.email && u.email === item.email)
+            );
             if (!user) {
-                cy.log(`⛔ ไม่พบ user ที่ชื่อหรือ email = ${nameOrEmail}`)
+                cy.log(`⛔ ไม่พบ user ที่ชื่อหรือ email = ${item.id}`)
                 return
             }
 

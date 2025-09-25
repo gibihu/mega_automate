@@ -15,4 +15,6 @@ npx cypress open
 5. Run แบบ Headless (CI/CD ใช้บ่อย)
 ``` bash
 npx cypress run
+
+git rm -r --cached .
 ```
